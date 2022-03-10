@@ -52,13 +52,18 @@ function displayBooks(){
     p_pages.textContent = `Pages : ${page}`
     p_read.textContent = `Did you read it? ${read}`
 
-    card.appendChild(p_title)
-    card.appendChild(p_author)
-    card.appendChild(p_pages)
-    card.appendChild(p_read)
-    document.querySelector("#library").appendChild(card)
+    card.appendChild(p_title);
+    card.appendChild(p_author);
+    card.appendChild(p_pages);
+    card.appendChild(p_read);
+    document.querySelector("#library").appendChild(card);
   }
 
+}
+
+function toggleCLass(){
+  document.querySelector(".newBook").classList.toggle("hidden");
+  document.querySelector(".card").classList.toggle("hidden");
 }
 
 const button = document.querySelector("#create");
@@ -68,3 +73,9 @@ button.addEventListener("click",addBookToLibrary);
 button.addEventListener("click",resetInputs);
 
 button.addEventListener("click",displayBooks);
+
+const buttonAdd = document.querySelector("#add")
+
+buttonAdd.addEventListener("click",toggleCLass);
+
+button.addEventListener("click",toggleCLass);
