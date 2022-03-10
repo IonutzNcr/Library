@@ -97,10 +97,13 @@ button.addEventListener("click",toggleCLass);
 function removeBook(){
   const index = +this.parentNode.dataset.index;
   myLibrary.splice(index,1);
+  updateIndex();
   displayBooks();
   
 }
 
-
+function updateIndex(){
+    myLibrary.forEach(e=>e.index = myLibrary.indexOf(e))
+}
 
 
