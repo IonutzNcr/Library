@@ -9,6 +9,17 @@ function Book(title,author,page,read,index) {
   // the constructor...
 }
 
+Book.prototype.changeStatus = function(){
+  if(this.read == "Yes"){
+    console.log("yes")
+    this.read = "No"
+  } else {
+    console.log("Non")
+    this.read = "Yes"
+  }
+
+  displayBooks()
+}
 
 
 function addBookToLibrary() {
@@ -49,6 +60,11 @@ function displayBooks(){
     remove.textContent = "X";
     remove.setAttribute("class","remove");
 
+    const statusBtn = document.createElement("button");
+    statusBtn.textContent = "C";
+    statusBtn.setAttribute("class","status")
+   
+
     const p_title = document.createElement("p")
     const p_author = document.createElement("p")
     const p_pages = document.createElement("p")
@@ -58,6 +74,7 @@ function displayBooks(){
     p_author.textContent = `Author : ${author}`
     p_pages.textContent = `Pages : ${page}`
     p_read.textContent = `Did you read it? ${read}`
+    p_read.appendChild(statusBtn);
 
     card.appendChild(remove)
     card.appendChild(p_title);
@@ -69,6 +86,10 @@ function displayBooks(){
 
   document.querySelectorAll(".remove").forEach(e=>{
     e.addEventListener("click",removeBook)
+  })
+  /* Omg the problem is still here */
+  document.querySelectorAll(".status").forEach(e=>{
+    e.addEventListener("click",changeStatus)
   })
 
 }
@@ -107,3 +128,6 @@ function updateIndex(){
 }
 
 
+function essay(){
+  console.log("mouhaha")
+}
