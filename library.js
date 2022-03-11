@@ -10,12 +10,13 @@ function Book(title,author,page,read,index) {
 }
 
 Book.prototype.changeStatus = function(){
-  if(this.read == "Yes"){
-    console.log("yes")
-    this.read = "No"
-  } else {
-    console.log("Non")
-    this.read = "Yes"
+ const currentObj = myLibrary[this.parentNode.parentNode.dataset.index]
+ 
+
+  if(currentObj.read == "Yes"){
+    currentObj.read = "No"
+  } else { 
+    currentObj.read = "Yes"
   }
 
   displayBooks()
@@ -87,9 +88,9 @@ function displayBooks(){
   document.querySelectorAll(".remove").forEach(e=>{
     e.addEventListener("click",removeBook)
   })
-  /* Omg the problem is still here */
+ 
   document.querySelectorAll(".status").forEach(e=>{
-    e.addEventListener("click",changeStatus)
+    e.addEventListener("click",Book.prototype.changeStatus)
   })
 
 }
