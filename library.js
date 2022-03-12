@@ -55,8 +55,12 @@ function displayBooks(){
     createCard(e.title,e.author,e.page,e.read,e.index);
   })
   function createCard(title,author,page,read,index){
+
+    const bcg =  document.createElement("div");
+    bcg.setAttribute("class","bcg");
     const card = document.createElement("div");
     card.setAttribute("data-index",index);
+    card.setAttribute("class","face");
     const remove = document.createElement("button");
     remove.textContent = "X";
     remove.setAttribute("class","remove");
@@ -82,7 +86,8 @@ function displayBooks(){
     card.appendChild(p_author);
     card.appendChild(p_pages);
     card.appendChild(p_read);
-    document.querySelector("#library").appendChild(card);
+    bcg.appendChild(card)
+    document.querySelector("#library").appendChild(bcg);
   }
 
   document.querySelectorAll(".remove").forEach(e=>{

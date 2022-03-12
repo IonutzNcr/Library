@@ -1,5 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap');
 
+*{
+    margin:0;
+    padding:0;
+}
 
+body{
+    background-color: rgb(240, 173, 48);
+}
+
+.container_1{
+    height: 20vh;
+    display:flex;
+    align-items: center;
+    padding-left:2vw;
+    border-bottom: dashed;
+    
+}
+
+#add{
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 30px;
+    border-style: none;
+    color: rgb(44, 158, 235);
+    padding: 20px;
+    border-radius: 12px;
+}
+#add::before{
+    content:"+ ";
+}
+
+#library{
+    padding-top:25px;
+    padding-left:25px;
+    display:grid;
+    grid-gap:24px;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    justify-content: center;
+}
+
+.face{
+    border:1px solid rgb(44, 158, 235);
+    background-color: rgb(165, 178, 189);
+    border-top-right-radius:50px ;
+    display:grid;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bcg{
+    background-color: black;
+}
+
+.face,.bcg{
+    height:200px;
+}
+
+/* Used in Js toggle function */
 .hidden{
     display:none;
 }
