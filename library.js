@@ -66,26 +66,26 @@ function displayBooks(){
     remove.setAttribute("class","remove");
 
     const statusBtn = document.createElement("button");
-    statusBtn.textContent = "C";
+    statusBtn.innerHTML = `<i class="fa-solid fa-pen"></i>`;
     statusBtn.setAttribute("class","status")
    
 
-    const p_title = document.createElement("p")
-    const p_author = document.createElement("p")
-    const p_pages = document.createElement("p")
-    const p_read = document.createElement("p")
+    const div_title = document.createElement("div")
+    const div_author = document.createElement("div")
+    const div_pages = document.createElement("div")
+    const div_read = document.createElement("div")
 
-    p_title.textContent = `Title : ${title}`
-    p_author.textContent = `Author : ${author}`
-    p_pages.textContent = `Pages : ${page}`
-    p_read.textContent = `Did you read it? ${read}`
-    p_read.appendChild(statusBtn);
+    div_title.textContent = `Title : ${title}`
+    div_author.textContent = `Author : ${author}`
+    div_pages.textContent = `Pages : ${page}`
+    div_read.textContent = "I read it: "+" "+" " + `${read}`
+    div_read.appendChild(statusBtn);
 
     card.appendChild(remove)
-    card.appendChild(p_title);
-    card.appendChild(p_author);
-    card.appendChild(p_pages);
-    card.appendChild(p_read);
+    card.appendChild(div_title);
+    card.appendChild(div_author);
+    card.appendChild(div_pages);
+    card.appendChild(div_read);
     bcg.appendChild(card)
     document.querySelector("#library").appendChild(bcg);
   }
