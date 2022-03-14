@@ -4,14 +4,13 @@
 *{
     margin:0;
     padding:0;
-    
 }
 
 /* Custom properties */
 :root{
     --main-font:'Smooch Sans', sans-serif;
     --unique-font:'Sansita Swashed', cursive;
-    --main-size: 1.3rem;
+    --main-size: 110%;
     --unique-size: 2rem;
 
     --bcg-main:rgb(236, 232, 232);
@@ -34,7 +33,7 @@ body{
     padding-top:25px;
     display:flex;
     flex-direction: column;
-    gap:25px;
+    align-items: center;
     padding-left:25px;
 }
 
@@ -45,42 +44,47 @@ body{
     padding: 20px;
     border-radius: 12px;
     font-family: var(--unique-font);
-    background: none;
+    background: none;  
 }
 
 #add:hover{
     text-shadow: 2px 2px rgba(0, 0, 0, 0.514);
+    cursor:pointer;
 }
 
 #add::before{
     content:"+ ";
 }
 
+.bcg,.face{
+    width:fit-content;
+    height:fit-content;
+}
+
 #library{
     padding-top:25px;
     padding-left:25px;
     padding-right:25px;
-    display:grid;
-    grid-gap:24px;
-    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
-    justify-content: center;
-    
+    display:flex;
+    gap:24px;
+    flex-wrap: wrap;  
 }
 
 .face{
     background-color: var(--bcg-main);
     border-top-right-radius:50% ;
-    display:grid;
+    display:flex;
     flex-direction: column;
     justify-content: center;
     position : relative;
     align-items:center;
     font-family: var(--main-font);
     font-weight: 500;
-    font-size: var(--unique-size);
+    font-size: var(--main-size);
     border-bottom-right-radius: 25px ;
     border-bottom-left-radius: 25px ;
     border-top-left-radius: 25px ;
+    padding:25px;
 }
 
 .bcg{
@@ -88,9 +92,7 @@ body{
     border-radius:25px ;
 }
 
-.face,.bcg{
-    height:200px;
-}
+
 
 /* Remove btn */
 .remove{
@@ -100,24 +102,21 @@ body{
     width:min-content;
     font-size:1.3rem;
     position:absolute;
-    top:5px;
-    right:10px;
-    
+    top:5%;
+    right:5%;
+    font-size:1rem;   
 }
 
 .remove:hover{
     color:red;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.548);
 }
 
-/* Used in Js toggle function */
-.hidden{
-    display:none;
-}
+
 
 .status{
-    position:absolute;
-    bottom:15px;
-    right:45px;
+    position:relative;
+    left:10px;
     background: none;
     border-style:none;
     color:var(--color-status);
@@ -125,8 +124,47 @@ body{
 
 .status:hover{
     color:green;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.548);
 }
 
 h1{
     color:var(--color-title);
+    text-align: center;
+    font-family: var(--main-font);
+    font-size: 3rem;
+}
+
+.card{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+input{
+    border-style:none;
+    border-radius: 15px;
+    background-color:var(--color-status);
+    padding:10px;
+}
+
+input:active{
+    offset: blue;
+}
+
+#create{
+    border-style:non;
+    background-color: var(--color-new-book);
+    border-radius: 15px;
+    padding:5px;
+    position:relative;
+    left:50%;   
+}
+
+#create:hover{
+    cursor: pointer;
+}
+
+/* Used in Js toggle function */
+.hidden{
+    display:none;
 }

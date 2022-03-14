@@ -18,35 +18,38 @@
             <button id="add">New Book</button>
         </div>
     
-        <div class="card hidden">
-            <div class="item_1">
-                <label for="title" >Title:</label>
-                <input id="title" type="text" name = "title" placeholder="Le rois des dragons" required>
+        <form action="">
+            <div class="card hidden">
+                <div class="item_1">
+                    <label for="title" >Title:</label>
+                    <input id="title" type="text" name = "title" placeholder="Le rois des dragons" required>
+                </div>
+                
+                <div class="item_2">
+                    <label for="author" >Author:</label>
+                    <input id="author" type="text" name = "author" placeholder="ShakeSpear" required>
+                </div>
+                
+                <div class="item_3">
+                    <label for="pages" >Pages:</label>
+                    <input id="pages" type="number" name = "pages" placeholder="102" required>
+                </div>
+                
+                <div class="item_4">
+                    <label for="read" >Read:</label>
+                    <select name="read" id="read">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+        
+                <div class="action">
+                    <button id="create">Create</button>
+                </div>
+               
             </div>
-            
-            <div class="item_2">
-                <label for="author" >Author:</label>
-                <input id="author" type="text" name = "author" placeholder="ShakeSpear" required>
-            </div>
-            
-            <div class="item_3">
-                <label for="pages" >Pages:</label>
-                <input id="pages" type="number" name = "pages" placeholder="102" required>
-            </div>
-            
-            <div class="item_4">
-                <label for="read" >Read:</label>
-                <select name="read" id="read">
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
-            </div>
-    
-            <div class="action">
-                <button id="create">Create</button>
-            </div>
-           
-        </div>
+        </form>
+        
     </div>
 
     <div id="library">
